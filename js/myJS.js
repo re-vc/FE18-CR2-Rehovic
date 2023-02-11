@@ -94,13 +94,16 @@ function printTask() {
         const modifyPriority = card.querySelector(".priority");
         modifyPriority.addEventListener("click", () => {
             let current = parseInt(modifyPriority.textContent);
-            current++;
+            if (tasks[i].priority === undefined) {
+                current = 0;
+            } else {
+                current++;
+            }
             modifyPriority.textContent = current;
             tasks[i].priority = current;
             modifyPriority.classList.remove("danger", "warning", "success");
             modifyPriority.classList.add(determinePriorityColor(i));
         });
-        
     }
 }
 
