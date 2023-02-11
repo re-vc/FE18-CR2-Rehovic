@@ -1,6 +1,26 @@
+body {
+  color: #011627;
+}
+
 .successTask {
   background-color: #20c997;
   color: white;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #011627;
+}
+.navbar .navbar-brand {
+  color: white;
+}
+.navbar .navbar-nav > a {
+  color: white;
+}
+.navbar .navbar-nav > .disabled {
+  color: gray;
 }
 
 .card-body .wrapperUI {
@@ -34,7 +54,7 @@
   gap: 1rem;
 }
 .card-body .wrapperInfo .priority {
-  background-color: black;
+  background-color: #011627;
   padding: 0 0.75rem;
   height: 1.666rem;
   color: white;
@@ -60,4 +80,50 @@
   padding: 0.333rem 1.5rem;
   display: flex;
   gap: 0.5rem;
+}
+
+.footer {
+  margin-top: 2rem;
+  background-color: #011627;
+  color: white;
+}
+.footer .wrapperFooter {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.footer .wrapperFooter .wrapperSocials {
+  padding: 2rem 0;
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.footer .wrapperFooter .wrapperSocials a {
+  text-decoration: none;
+  color: white;
+}
+.footer .wrapperFooter .wrapperNewsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .wrapperFooter .wrapperNewsletter input {
+  width: 50%;
+}
+.footer .wrapperFooter .wrapperNewsletter .btn {
+  background-color: #011627;
+  border: solid 1px white;
+  color: white;
+}
+.footer .wrapperFooter .wrapperNewsletter .btn:hover {
+  background-color: white;
+  color: #011627;
+}
+.footer .wrapperFooter .copy {
+  padding: 2rem 0;
+  padding-top: 1rem;
+  text-align: center;
 }/*# sourceMappingURL=myStyle.css.map */

@@ -1,3 +1,4 @@
+$black: #011627;
 $blue: #0d6efd;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -13,9 +14,29 @@ $danger: $red;
 $warning: $orange;
 $success: $teal;
 
+body {
+  color: $black;
+}
+
 .successTask {
   background-color: $success;
   color: white;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $black;
+  .navbar-brand {
+    color: white;
+  }
+  .navbar-nav > a {
+    color: white;
+  }
+  .navbar-nav > .disabled {
+    color: gray;
+  }
 }
 
 .card-body {
@@ -49,7 +70,7 @@ $success: $teal;
       gap: 1rem;
     }
     .priority {
-      background-color: black;
+      background-color: $black;
       padding: 0 0.75rem;
       height: 1.666rem;
       color: white;
@@ -75,6 +96,52 @@ $success: $teal;
       padding: 0.333rem 1.5rem;
       display: flex;
       gap: 0.5rem;
+    }
+  }
+}
+
+.footer {
+  margin-top: 2rem;
+  background-color: $black;
+  color: white;
+  .wrapperFooter {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    .wrapperSocials {
+      padding: 2rem 0;
+      padding-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .wrapperNewsletter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      input {
+        width: 50%;
+      }
+      .btn {
+        background-color: $black;
+        border: solid 1px white;
+        color: white;
+        &:hover {
+          background-color: white;
+          color: $black;
+        }
+      }
+    }
+    .copy {
+      padding: 2rem 0;
+      padding-top: 1rem;
+      text-align: center;
     }
   }
 }

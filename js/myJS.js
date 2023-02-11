@@ -84,6 +84,8 @@ function printTask() {
         const deleteBtn = card.querySelector(".delete");
         deleteBtn.addEventListener("click", () => {
             card.remove();
+            tasks.splice(i, 1);
+            localStorage.setItem('myTasksJSON', JSON.stringify(tasks));
         });
 
         const doneBtn = card.querySelector(".done");
@@ -103,6 +105,7 @@ function printTask() {
             tasks[i].priority = current;
             modifyPriority.classList.remove("danger", "warning", "success");
             modifyPriority.classList.add(determinePriorityColor(i));
+            localStorage.setItem('myTasksJSON', JSON.stringify(tasks));
         });
     }
 }
@@ -129,6 +132,4 @@ tasks[3].priority = 5;
 tasks[3].deadline = '26.02.2023';
 
 printTask();
-
-// localStorage.clear();
 localStorage.setItem('myTasksJSON', JSON.stringify(tasks));
