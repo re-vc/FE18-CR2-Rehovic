@@ -1,1 +1,57 @@
-/*# sourceMappingURL=myStyle.css.map */
+.card-body .wrapperUI {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-body .wrapperUI .task {
+  background-color: #0dcaf0;
+  color: white;
+  padding: 0.125rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+.card-body img {
+  width: 100%;
+  margin: 1rem 0;
+}
+.card-body .wrapperInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0;
+  margin: 1rem 0;
+  border-top: solid 2px gray;
+  border-bottom: solid 2px gray;
+}
+.card-body .wrapperInfo .wrapperPriority,
+.card-body .wrapperInfo .wrapperDeadline {
+  display: flex;
+  margin: 0.333rem 0;
+  gap: 1rem;
+}
+.card-body .wrapperInfo .priority {
+  background-color: black;
+  padding: 0 0.75rem;
+  height: 1.666rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.25rem;
+}
+.card-body .wrapperInfo .success {
+  background-color: #20c997;
+}
+.card-body .wrapperInfo .warning {
+  background-color: #fd7e14;
+}
+.card-body .wrapperInfo .danger {
+  background-color: #dc3545;
+}
+.card-body .wrapperControls {
+  display: flex;
+  justify-content: space-between;
+}
+.card-body .wrapperControls .btn {
+  color: white;
+  padding: 0.333rem 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+}/*# sourceMappingURL=myStyle.css.map */

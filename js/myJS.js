@@ -25,27 +25,83 @@ function createTaskEmpty(amount) {
     }
 }
 
+function determinePriorityColor(i) {
+    const current = tasks[i].priority;
+    let setColor;
+    switch (true) {
+        case (current >= 4):
+            setColor = 'danger';
+            break;
+        case (current >= 2):
+            setColor = 'warning';
+            break;
+        case (current >= 0):
+            setColor = 'success';
+            break;
+        default:
+            setColor = '';
+            break;
+    }
+    return setColor;
+}
+
 function printTask() {
-    // let row = document.getElementsByClassName('row');
-    // let counter = -1;
     for (let i = 0; i < tasks.length; i++) {
-        // if (i % 3 == 0) {
-        //     // container.innerHTML += `<div class="row"></div>`;
-        //     // counter++;
-        // }
-        // row[counter].innerHTML +=
         container.innerHTML +=
-        `<div class="card col-sm-12 col-md-6 col-lg-4">
+            `<div class="card col-sm-12 col-md-6 col-xl-4">
         <div class="card-body">
-          <h5 class="card-title">Task${i}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="wrapperUI">
+                <div class="task">Task ${'#' + i}</div>
+                <div>
+                    <i class="bi bi-bookmark"></i>
+                    <i class="bi bi-three-dots-vertical"></i>
+                </div>
+            </div>
+            <img src="img/Screenshot_01.png" alt="table with notepad and macbook">
+            <h4 class="card-title">${tasks[i].title}</h4>
+            <p class="card-text">${tasks[i].description}</p>
+            <div class="wrapperInfo">
+                <div class="wrapperPriority">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <h5>Priority level: </h5>
+                    <h5 class="priority ${determinePriorityColor(i)}">${tasks[i].priority}</h5>
+                </div>
+                <div class="wrapperDeadline">
+                    <i class="bi bi-calendar-event"></i>
+                    <h5>Deadline: </h5>
+                    <h5>${tasks[i].deadline}</h5>
+                </div>
+            </div>
+            <div class="wrapperControls">
+                <a class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
+                <a class="btn btn-success"><i class="bi bi-check2-circle"></i> Done</a>
+            </div>
         </div>
-        </div>`;
+    </div>`;
     }
 }
 
 createTaskEmpty(10);
+tasks[0].title = 'buy milk';
+tasks[0].description = 'go and buy milk for cooking.';
+tasks[0].priority = 1;
+tasks[0].deadline = '22.02.2023';
+
+tasks[1].title = 'cook pudding';
+tasks[1].description = 'use the milk to create pudding for guests.';
+tasks[1].priority = 2;
+tasks[1].deadline = '28.02.2023';
+
+tasks[2].title = 'dinner party';
+tasks[2].description = 'guests are coming to enjoy the food.';
+tasks[2].priority = 3;
+tasks[2].deadline = '01.03.2023';
+
+tasks[3].title = 'visit friend';
+tasks[3].description = 'go and visit friend.';
+tasks[3].priority = 5;
+tasks[3].deadline = '26.02.2023';
+
 printTask();
 
 // localStorage.clear();
