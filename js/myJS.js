@@ -14,7 +14,7 @@ class Task {
     }
 }
 
-const container = document.querySelector('.row.row-cols-3');
+const container = document.querySelector('#main');
 let tasks = [];
 
 function createTaskEmpty(amount) {
@@ -26,16 +26,16 @@ function createTaskEmpty(amount) {
 }
 
 function printTask() {
-    let row = document.getElementsByClassName('row');
+    // let row = document.getElementsByClassName('row');
     // let counter = -1;
     for (let i = 0; i < tasks.length; i++) {
-        if (i % 3 == 0) {
-            // container.innerHTML += `<div class="row"></div>`;
-            // counter++;
-        }
+        // if (i % 3 == 0) {
+        //     // container.innerHTML += `<div class="row"></div>`;
+        //     // counter++;
+        // }
         // row[counter].innerHTML +=
         container.innerHTML +=
-        `<div class="card" style="width: 18rem;">
+        `<div class="card col-sm-12 col-md-6 col-lg-4">
         <div class="card-body">
           <h5 class="card-title">Task${i}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
