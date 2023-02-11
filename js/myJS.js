@@ -26,7 +26,7 @@ function createTaskEmpty(amount) {
 }
 
 function determinePriorityColor(i) {
-    const current = tasks[i].priority;
+    let current = tasks[i].priority;
     let setColor;
     switch (true) {
         case (current >= 4):
@@ -65,7 +65,7 @@ function printTask() {
                     <div class="wrapperPriority">
                         <i class="bi bi-exclamation-triangle-fill"></i>
                         <h5>Priority level: </h5>
-                        <h5 class="priority ${determinePriorityColor(i)}">${tasks[i].priority}</h5>
+                        <button class="priority ${determinePriorityColor(i)}">${tasks[i].priority}</button>
                     </div>
                     <div class="wrapperDeadline">
                         <i class="bi bi-calendar-event"></i>
@@ -89,10 +89,20 @@ function printTask() {
         const doneBtn = card.querySelector(".done");
         doneBtn.addEventListener("click", () => {
             card.classList.add('successTask')
-        })
+        });
+
+        const modifyPriority = card.querySelector(".priority");
+        modifyPriority.addEventListener("click", () => {
+            let current = parseInt(modifyPriority.textContent);
+            current++;
+            modifyPriority.textContent = current;
+            tasks[i].priority = current;
+            modifyPriority.classList.remove("danger", "warning", "success");
+            modifyPriority.classList.add(determinePriorityColor(i));
+        });
+        
     }
 }
-
 
 createTaskEmpty(10);
 tasks[0].title = 'buy milk';
