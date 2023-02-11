@@ -1,3 +1,8 @@
+.successTask {
+  background-color: #20c997;
+  color: white;
+}
+
 .card-body .wrapperUI {
   display: flex;
   justify-content: space-between;
@@ -35,6 +40,7 @@
   color: white;
   font-weight: bold;
   border-radius: 0.25rem;
+  border: solid 1px white;
 }
 .card-body .wrapperInfo .success {
   background-color: #20c997;

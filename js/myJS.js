@@ -47,39 +47,52 @@ function determinePriorityColor(i) {
 
 function printTask() {
     for (let i = 0; i < tasks.length; i++) {
-        container.innerHTML +=
-            `<div class="card col-sm-12 col-md-6 col-xl-4">
-        <div class="card-body">
-            <div class="wrapperUI">
-                <div class="task">Task ${'#' + i}</div>
-                <div>
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-three-dots-vertical"></i>
+        const card = document.createElement("div");
+        card.className = "card col-sm-12 col-md-6 col-xl-4";
+        card.innerHTML =
+            `<div class="card-body">
+                <div class="wrapperUI">
+                    <div class="task">Task ${'#' + i}</div>
+                    <div>
+                        <i class="bi bi-bookmark"></i>
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </div>
                 </div>
-            </div>
-            <img src="img/Screenshot_01.png" alt="table with notepad and macbook">
-            <h4 class="card-title">${tasks[i].title}</h4>
-            <p class="card-text">${tasks[i].description}</p>
-            <div class="wrapperInfo">
-                <div class="wrapperPriority">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    <h5>Priority level: </h5>
-                    <h5 class="priority ${determinePriorityColor(i)}">${tasks[i].priority}</h5>
+                <img src="img/Screenshot_01.png" alt="table with notepad and macbook">
+                <h4 class="card-title">${tasks[i].title}</h4>
+                <p class="card-text">${tasks[i].description}</p>
+                <div class="wrapperInfo">
+                    <div class="wrapperPriority">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <h5>Priority level: </h5>
+                        <h5 class="priority ${determinePriorityColor(i)}">${tasks[i].priority}</h5>
+                    </div>
+                    <div class="wrapperDeadline">
+                        <i class="bi bi-calendar-event"></i>
+                        <h5>Deadline: </h5>
+                        <h5>${tasks[i].deadline}</h5>
+                    </div>
                 </div>
-                <div class="wrapperDeadline">
-                    <i class="bi bi-calendar-event"></i>
-                    <h5>Deadline: </h5>
-                    <h5>${tasks[i].deadline}</h5>
+                <div class="wrapperControls">
+                    <button class="btn btn-danger delete"><i class="bi bi-trash"></i> Delete</button>                
+                    <button class="btn btn-success done"><i class="bi bi-check2-circle"></i> Done</button>
                 </div>
-            </div>
-            <div class="wrapperControls">
-                <a class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
-                <a class="btn btn-success"><i class="bi bi-check2-circle"></i> Done</a>
-            </div>
-        </div>
-    </div>`;
+            </div>`;
+
+        container.appendChild(card);
+
+        const deleteBtn = card.querySelector(".delete");
+        deleteBtn.addEventListener("click", () => {
+            card.remove();
+        });
+
+        const doneBtn = card.querySelector(".done");
+        doneBtn.addEventListener("click", () => {
+            card.classList.add('successTask')
+        })
     }
 }
+
 
 createTaskEmpty(10);
 tasks[0].title = 'buy milk';
