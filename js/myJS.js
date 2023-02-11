@@ -110,7 +110,7 @@ function printTask() {
     }
 }
 
-createTaskEmpty(10);
+createTaskEmpty(5);
 tasks[0].title = 'buy milk';
 tasks[0].description = 'go and buy milk for cooking.';
 tasks[0].priority = 1;
@@ -130,6 +130,18 @@ tasks[3].title = 'visit friend';
 tasks[3].description = 'go and visit friend.';
 tasks[3].priority = 5;
 tasks[3].deadline = '26.02.2023';
+
+const createTasksBTN = document.getElementById("createTasksBTN");
+createTasksBTN.addEventListener("click", () => {
+    const myInput = document.getElementById("myNumber").value;
+    createTaskEmpty(myInput);
+    printTask();
+    document.getElementById("myNumber").value = "";
+});
+
+const subscribe = document.getElementById("subscribe");
+const email = document.getElementById("email");
+subscribe.addEventListener("click", () => { email.value = "" });
 
 printTask();
 localStorage.setItem('myTasksJSON', JSON.stringify(tasks));

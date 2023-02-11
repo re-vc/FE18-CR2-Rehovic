@@ -23,6 +23,23 @@ body {
   color: white;
 }
 
+.wrapperTaskCreation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  .createTasksBTN,
+  #myNumber {
+    border: solid 1px $black;
+    border-radius: 0.25rem;
+    width: 50%;
+  }
+}
+
+.lead {
+  text-align: justify;
+}
+
 .navbar {
   position: sticky;
   top: 0;

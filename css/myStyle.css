@@ -7,6 +7,22 @@ body {
   color: white;
 }
 
+.wrapperTaskCreation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.wrapperTaskCreation .createTasksBTN,
+.wrapperTaskCreation #myNumber {
+  border: solid 1px #011627;
+  border-radius: 0.25rem;
+  width: 50%;
+}
+
+.lead {
+  text-align: justify;
+}
+
 .navbar {
   position: sticky;
   top: 0;
